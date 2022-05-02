@@ -1,5 +1,8 @@
-import Home from '../assets/home.svg'
-import Marketing from '../assets/marketing.svg'
+import Home from '../assets/home-2.svg'
+import Marketing from '../assets/marketing-2.svg'
+import Customers from '../assets/customers.svg'
+import Delivery from '../assets/delivery.svg'
+
 
 type TsideBarItems = {
     icon?: string,
@@ -11,64 +14,60 @@ type TsideBarItems = {
 
 const sideBarItems: TsideBarItems[] = [
 
+  
     {
-        icon: Home,
-        title: 'Home',
-        path: "/"
-    },
-    {
-        icon: Home,
-        title: 'Catalogues',
-        path: "/catalogues",
-    },
-    {
-        icon: Home,
-        title: 'Orders',
-        path: "/orders"
+        icon: Customers,
+        title: 'Customers',
+        path: "#"
     },
     {
         icon: Marketing,
         title: 'Marketing',
-        path: "/",
+        path: "#",
         children: [
             {
                title: "Discount Codes",
-               path:"/discount-codes"
+               path:"#"
             },
             {
                 title: "Exit intent",
-                path:"/exit-intent"
+                path:"#"
             },
             {
                 title: "Checkout Features",
-                path:"/checkout-features"
+                path:"#"
             },
              {
                 title: "Post-purchase Conversation",
-                path:"/post-purchase-conversation"
+                path:"#"
              },
              {
                 title: "Cart Abandonment",
-                path:"/cart-abandonment"
+                path:"#"
              },
              {
                 title: "Timer Checkout",
-                path:"/timer-checkout"
+                path:"#"
              },
              {
                 title: "Sell on Social",
-                path:"/sell-on-social"
+                path:"#"
              },
              {
                 title: "Special Offer",
-                path:"/special-offer"
+                path:"#"
              },
              {
                 title: "Seasonal Offer",
-                path:"/seasonal-offer"
+                path:"#"
              }
         ]
-    }
+    },
+    {
+        icon: Delivery,
+        title: 'Delivery',
+        path: "#"
+    },
 ]
 
 export default sideBarItems;

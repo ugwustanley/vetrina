@@ -4,15 +4,15 @@ import { CaretDown, CaretUp } from "phosphor-react";
 import { Link } from "react-router-dom";
 
 type TSubNav = {
-  title: string;
-  path: string;
+  name: string;
+  link: string;
 };
 
 type props = {
   name: string;
   icon: any;
   link: string;
-  subNavItems?: any,
+  subNavItems?: Array<TSubNav>;
   active?: Boolean,
   showSideBar: Boolean;
 };
@@ -54,21 +54,24 @@ const NavItemText = {
   fontSize: "1rem",
   marginLeft: ".3rem",
   marginTop: ".4rem",
-  fontWeight: "500",
+  fontWeight: "normal",
 };
 
-const SubLinkItem = {
-  color: "#233B53",
-  background:"#E9F8FE",
-  textDecoration: "inherit !important",
-  boxSizing: "border-box",
-  fontSize:"1rem",
-  padding:".6rem 2rem",
-  paddingLeft:"3rem",
-  display:"block",
+const NavItemTextActive = {
+  ...NavItemText,
+  color: "#21B8F9",
 }
 
-const SideBarItem: React.FC<props> = ({
+const Orders = {
+    padding:".4rem .6rem",
+    fontSize: ".8rem",
+    background: "#00C48C",
+    borderRadius: "50%",
+    color:"#fff",
+    textAlign: "center",
+}
+
+const SideBarItemOrder: React.FC<props> = ({
   name,
   icon,
   link,
@@ -85,34 +88,24 @@ const SideBarItem: React.FC<props> = ({
           <Box sx={NavInnerItem}>
             <img src={icon || ""} alt="home icon" />
             {showSideBar && (
-              <Typography sx={NavItemText} variant="h3">
+              <Typography sx={active ?NavItemTextActive : NavItemText} variant="h6">
                 {name || "Dashboard"}
               </Typography>
             )}
           </Box>
 
-          {subNavItems && showSideBar ? (
-            <Box sx={{ cursor: "pointer" , marginTop: ".5rem" }} onClick={() => setShowChildren(!showChildren)}>
-              {showChildren ? <CaretUp size={20} /> : <CaretDown size={20} />}
+          {showSideBar ? (
+            <Box sx={Orders} onClick={() => setShowChildren(!showChildren)}>
+               14
             </Box>
           ) : null}
 
           {/* <CaretDown size={22} /> */}
         </Box>
       </Box>
-      {subNavItems && showSideBar ? (
-        <Box sx={{}}>
-          {showChildren &&
-           <Box sx={{}}>
-             {
-                subNavItems?.map((item, index) => (
-                  <Typography sx={SubLinkItem} variant="h5">{item?.title}</Typography>
-               ))
-             }</Box>}
-        </Box>
-      ) : null}
+     
     </>
   );
 };
 
-export default SideBarItem;
+export default SideBarItemOrder;
