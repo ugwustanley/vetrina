@@ -52,9 +52,10 @@ const NavInnerItem = {
 
 const NavItemText = {
   fontSize: "1rem",
-  marginLeft: ".3rem",
-  marginTop: ".4rem",
+  marginLeft: ".5rem",
+  marginTop: ".1rem",
   fontWeight: "normal",
+  fontFamily: 'Noto Sans HK',
 };
 
 const NavItemTextActive = {
@@ -63,13 +64,19 @@ const NavItemTextActive = {
 }
 
 const Orders = {
-    padding:".4rem .6rem",
+    padding:".3rem .5rem",
     fontSize: ".8rem",
     background: "#00C48C",
     borderRadius: "50%",
     color:"#fff",
     textAlign: "center",
+    fontWeight: "normal",
+    fontFamily: 'Noto Sans HK',
 }
+
+const NavIcon = {
+    width: "22px",
+ }
 
 const SideBarItemOrder: React.FC<props> = ({
   name,
@@ -86,7 +93,7 @@ const SideBarItemOrder: React.FC<props> = ({
       <Box sx={active ? NavItemBoxActive : NavItemBox}>
         <Box sx={active ? NavItemActive : NavItem}>
           <Box sx={NavInnerItem}>
-            <img src={icon || ""} alt="home icon" />
+            <Box sx={NavIcon}> <img src={icon || ""} alt="home icon" /></Box>
             {showSideBar && (
               <Typography sx={active ?NavItemTextActive : NavItemText} variant="h6">
                 {name || "Dashboard"}

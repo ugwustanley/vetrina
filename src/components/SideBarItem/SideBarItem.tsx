@@ -51,21 +51,30 @@ const NavInnerItem = {
 };
 
 const NavItemText = {
-  fontSize: "1rem",
-  marginLeft: ".3rem",
-  marginTop: ".4rem",
-  fontWeight: "500",
+  fontSize: ".94rem",
+  marginLeft: ".5rem",
+  marginBottom: ".1rem",
+  fontWeight: "normal",
+  fontFamily: 'Noto Sans HK',
+  textAlign: "left"
 };
+
+const NavIcon = {
+   width: "22px",
+}
 
 const SubLinkItem = {
   color: "#233B53",
   background:"#E9F8FE",
   textDecoration: "inherit !important",
   boxSizing: "border-box",
-  fontSize:"1rem",
+  fontSize:".9rem",
   padding:".6rem 2rem",
-  paddingLeft:"3rem",
+  paddingLeft:"3.5rem",
+  paddingRight: ".5rem",
   display:"block",
+  fontWeight: "400",
+  fontFamily: 'Noto Sans HK',
 }
 
 const SideBarItem: React.FC<props> = ({
@@ -78,14 +87,16 @@ const SideBarItem: React.FC<props> = ({
 }) => {
   const [showChildren, setShowChildren] = useState(false);
 
+  console.log(subNavItems , "nav items")
+
   return (
     <>
       <Box sx={active ? NavItemBoxActive : NavItemBox}>
         <Box sx={active ? NavItemActive : NavItem}>
           <Box sx={NavInnerItem}>
-            <img src={icon || ""} alt="home icon" />
+           <Box sx={NavIcon}> <img src={icon || ""} alt="home icon" /></Box>
             {showSideBar && (
-              <Typography sx={NavItemText} variant="h3">
+              <Typography sx={NavItemText}  variant="h3">
                 {name || "Dashboard"}
               </Typography>
             )}
@@ -93,7 +104,7 @@ const SideBarItem: React.FC<props> = ({
 
           {subNavItems && showSideBar ? (
             <Box sx={{ cursor: "pointer" , marginTop: ".5rem" }} onClick={() => setShowChildren(!showChildren)}>
-              {showChildren ? <CaretUp size={20} /> : <CaretDown size={20} />}
+              {showChildren ? <CaretUp size={20} weight="regular" /> : <CaretDown weight="regular"  size={20} />}
             </Box>
           ) : null}
 
@@ -105,7 +116,7 @@ const SideBarItem: React.FC<props> = ({
           {showChildren &&
            <Box sx={{}}>
              {
-                subNavItems?.map((item, index) => (
+                subNavItems?.map((item: any, index: number) => (
                   <Typography sx={SubLinkItem} variant="h5">{item?.title}</Typography>
                ))
              }</Box>}
