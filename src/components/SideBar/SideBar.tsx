@@ -27,7 +27,7 @@ const NavContainer = {
   borderRight: "2px solid rgba(0, 0, 0, .2)",
   width: '250px',
   height: '100vh',
-  transition: "width .3s ease-in-out",
+ // transition: "width .3s ease-in-out",
   color: "#103B66",
   overflow: "hidden",
 }
@@ -35,10 +35,11 @@ const NavContainer = {
 const Nav = {
     position: 'relative',
     height: '100vh',
-    transition: "width .1s ease-in-out",
+   // transition: "width .1s ease-in-out",
     color: "#103B66",
     overflowY:"auto",
     marginBottom: "5rem 0",
+    paddingTop:"1rem",
     
 '&::-webkit-scrollbar-track' :{
   backgroundColor:'transparent',

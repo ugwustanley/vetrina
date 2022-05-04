@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Stack } from '@mui/material'
+import { Stack , Box } from '@mui/material'
 import SidBar from '../components/SideBar/SideBar'
 import MenuBar from '../components/MenuBar/MenuBar'
 
@@ -11,16 +11,21 @@ const Layout:React.FC<props> =  ({ children }) => {
 
     const [showSideBar, setShowSideBar] = useState<Boolean>(true)
 
+    // const sideHide = {
+    //     transition: "width 5.3s ease-in-out",
+    //     width: "calc(100vw - 250px)"}
+    // }
+
     return (
         <>
-        <Stack direction="row">
+        <Stack direction="row" sx={{ width:"calc(100vw - 0px)" , height:"100vh", overflowY:"hidden"}}>
            <SidBar showSideBar={showSideBar} setShowSideBar={setShowSideBar}/>
-            <div className="">
-                <div>
+            <Box sx={showSideBar?{width: "calc(100vw - 250px)" , overflowY:"auto"}: {width: "calc(100vw - 60px)", overflowY:"auto", transition: "0"}}>
+                <Box sx={{background:''}}>
                     <MenuBar title="dashboard" />
-                </div>
+                </Box>
                 {children}
-            </div>
+            </Box>
          </Stack>
         </>
     )
