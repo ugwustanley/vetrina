@@ -27,7 +27,11 @@ const SelectShop = () => {
     marginLeft: "1rem",
   };
 
-  const [values, setValues] = React.useState({
+  type Tvalues = {
+    shop:string
+  }
+
+  const [values, setValues] = useState<Tvalues>({
     shop: "",
   });
 

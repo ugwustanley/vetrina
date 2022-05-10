@@ -7,11 +7,11 @@ import Visitors from '../../components/Visitors/Visitors'
 import Order from '../../components/Order/Order'
 import Configure from '../../components/Configure/Configure'
 import SellProduct from '../../components/SellProduct/SellProduct'
+import Extensions from '../../components/Extensions/Extensions'
+import TrustPilot from '../../components/TrustPilot/TrustPilot'
 
 const Home: React.FC = () => {
   const HomeContainer = {
-    // background: "linear-gradient(to bottom, #fdfbfb 0%, #ebedee 100%)",
-    //background: "linear-gradient(180deg, #21B8F9 0%, rgba(33, 184, 249, 0) 250px ,  #fff 132.05%);",
     minHeight: "calc(100vh - 80px)",
     overflowY:"auto",
     background:"#E5E5E5",
@@ -36,6 +36,8 @@ const Home: React.FC = () => {
             <Visitors /> */}
             <Configure />
             <SellProduct />
+            <Extensions />
+            <TrustPilot />
             {/* <Configure /> */}
        </Box>
     </Box>

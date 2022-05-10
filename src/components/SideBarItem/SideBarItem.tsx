@@ -85,9 +85,9 @@ const SideBarItem: React.FC<props> = ({
   active,
   showSideBar,
 }) => {
-  const [showChildren, setShowChildren] = useState(false);
+  const [showChildren, setShowChildren] = useState<boolean>(false);
 
-  console.log(subNavItems , "nav items")
+ 
 
   return (
     <>

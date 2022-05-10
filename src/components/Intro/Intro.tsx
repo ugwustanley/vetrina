@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Stack, Typography } from "@mui/material";
 import LinkIcon from "./assets/link.svg";
 
-const Intro = () => {
+const Intro:React.FC = () => {
   const IntroContainer = {
     background:
       "linear-gradient(180deg, #21B8F9 0%, rgba(33, 184, 249, 0) 132.05%);",

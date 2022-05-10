@@ -86,7 +86,7 @@ const SideBarItemOrder: React.FC<props> = ({
   active,
   showSideBar,
 }) => {
-  const [showChildren, setShowChildren] = useState(false);
+  const [showChildren, setShowChildren] = useState<boolean>(false);
 
   return (
     <>
