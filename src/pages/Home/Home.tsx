@@ -8,7 +8,9 @@ import Configure from "../../components/Configure/Configure";
 import SellProduct from "../../components/SellProduct/SellProduct";
 import Extensions from "../../components/Extensions/Extensions";
 import TrustPilot from "../../components/TrustPilot/TrustPilot";
+import NewsContainer from "../../components/NewsContainer/NewsContainer";
 import Invite from "../../components/Invite/Invite";
+import Support from "../../components/Support/Support";
 
 const Home: React.FC = () => {
   const HomeContainer = {
@@ -23,11 +25,15 @@ const Home: React.FC = () => {
     display: "grid",
     gridTemplateColumns: "1fr 1fr 1fr",
     gridAutoColumns: "minmax(100px, auto)",
-    gridGap: "1.5rem",
+    gridGap: "1rem",
   };
   const HomeInvite = {
      gridColumn: "3/4",
      marginTop:"-4rem",
+  }
+
+  const HomeNewsContainer = {
+    gridColumn: "1/3",
   }
 
   return (
@@ -42,9 +48,15 @@ const Home: React.FC = () => {
         <SellProduct />
         <Extensions />
         <TrustPilot />
+        <Box sx={HomeNewsContainer}>
+          <NewsContainer />
+        </Box>
         <Box sx={HomeInvite}>
           <Invite />
+          <Support />
         </Box>
+
+       
         {/* <Configure /> */}
       </Box>
     </Box>
