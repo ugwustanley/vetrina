@@ -60,7 +60,7 @@ const News: React.FC = () => {
   };
 
   const NewsImage = {
-      backgroundImage:`${Image}`,
+      backgroundImage:`url(${Image})`,
       backgroundSize:"cover",
     //   backgroundColor:"red",
       width:"100%",

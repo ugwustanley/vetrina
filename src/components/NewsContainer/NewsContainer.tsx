@@ -1,6 +1,6 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Box, Stack, Button} from "@mui/material";
-import { CaretDown, ArrowRight } from "phosphor-react";
+import {newsService} from '../../services/apiService'
 import FileIcon from './assets/file.svg';
 import LinkIcon from './assets/link.svg';
 import News from '../News/News';
@@ -53,6 +53,18 @@ const NewsContainer: React.FC = () => {
     marginTop:"3rem",
   }
 
+  useEffect(() => {
+    newsService(6)
+    .then((data) => {
+      console.log(data, "data");
+     
+    })
+    .catch((error: Error) => {
+      console.error({ error });
+     
+    });
+  },[])
+  
   return (
     <Box sx={NewsContainerContainer}>
       <Stack justifyContent="space-between" direction="row">
