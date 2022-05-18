@@ -1,79 +1,73 @@
 import React from "react";
-import { Box, Stack, Button} from "@mui/material";
-import { CaretDown, ArrowRight } from "phosphor-react";
-import Image from './assets/image.svg'
+import { Box, Stack, Button } from "@mui/material";
+import { Link } from "react-router-dom";
+import { newsData } from "../../interface/index";
+import Image from "./assets/image.svg";
 
+type props = {
+  data: newsData;
+};
 
-
-const News: React.FC = () => {
+const News: React.FC<props> = ({ data }) => {
   const News = {
-    minHeight: "100px",
+    minHeight: "80px",
     background: "#fff",
-    marginBottom: "6rem",
     position: "relative",
-    display:"grid",
-    gridTemplateColumns: "1fr 1fr",
-    backgroundColor:"red",
-  };
-  const NewsTitle = {
-    display: "flex",
-    alignItems: "center",
-    height: "fit-content",
-    "& h5": {
-      margin: 0,
-      marginLeft: ".4rem",
-      fontSize: "1.1rem",
-      fontWeight: "normal",
-    },
+    display: "grid",
+    gridTemplateColumns: "90px 1fr",
+    boxSizing: "border-box",
   };
   const NewsContent = {
-    fontSize: "1rem",
-    fontWeight: "normal",
-    lineHeight: "1.5rem",
-    marginTop: "1.7rem",
-    display:"flex",
-    alignItems:"center",
-    "& p": {
-      marginLeft:"1rem",
-    },
-  };
+    // marginLeft:"1rem",
+    boxSizing: "border-box",
+    padding: ".9rem",
+    paddingTop: "0",
+    paddingBottom: "0",
 
-  const NewsButton = {
-      marginTop:"1rem",
-      padding:"2rem",
-  }
-
-  const NewsLink = {
-    cursor: "pointer",
-    color: "#21B8F9",
-    textDecoration: "underline",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 0,
     "& p": {
-      padding: 0,
+      color: "#103B66",
+      fontSize: ".8rem",
+      fontWeight: "normal",
       margin: 0,
+      marginTop: ".2rem",
+      height: "40px",
+      textOverflow: "ellipsis",
+      overflow: "hidden",
+      width: "100%",
+
+      //   whiteSpace: "nowrap",
+    },
+    "& h6": {
       fontSize: ".9rem",
-      marginRight: ".7rem",
+      fontWeight: "normal",
+      margin: 0,
+      color: "#21B8F9",
+      textTransform: "capitalize",
+    },
+    "& a": {
+      fontSize: ".8rem",
+      fontWeight: "lighter",
+      margin: 0,
+      color: "#103B66",
     },
   };
 
   const NewsImage = {
-      backgroundImage:`url(${Image})`,
-      backgroundSize:"cover",
+    backgroundImage: data?.image ? `url(${data?.image})` : `url(${Image})`,
+    backgroundSize: "cover",
     //   backgroundColor:"red",
-      width:"100%",
-      height:"100%",
-  }
+    width: "100%",
+    height: "100%",
+  };
 
   return (
     <Box sx={News}>
-      
-        <Box sx={NewsImage}>
-            image
-        </Box>
-        <Box>COntent</Box>
+      <Box sx={NewsImage}></Box>
+      <Box sx={NewsContent}>
+        <h6>{data?.category}</h6>
+        <p>{data?.title}</p>
+        <a href={`${data?.url}`}>Estimated reading: 4 min</a>
+      </Box>
     </Box>
   );
 };
