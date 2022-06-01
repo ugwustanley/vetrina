@@ -75,9 +75,7 @@ const SideBar:React.FC<props> = ({showSideBar , setShowSideBar}) => {
 
   return (
     <Box sx={showSideBar ? NavContainer: NavContainerClose}>
-    <Box
-      sx={Nav}
-    >
+    <Box  sx={Nav} key={0} >
       
         <SideBarToggle showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
         <SideBarItem active={true} name="Dashboard" icon={Home} link="#"  showSideBar={showSideBar}  />
@@ -89,9 +87,9 @@ const SideBar:React.FC<props> = ({showSideBar , setShowSideBar}) => {
           sideBarItems.map((item: any, index: number) => (
                     
                item?.children ?
-               ( <SideBarItem name={item.title} icon={item.icon} link="#" subNavItems={item?.children}  showSideBar={showSideBar}  />)
+               ( <SideBarItem name={item.title} icon={item.icon} link="#" key={index} subNavItems={item?.children}  showSideBar={showSideBar}  />)
                :
-               ( <SideBarItem name={item.title} icon={item.icon} link="#"   showSideBar={showSideBar}  />)
+               ( <SideBarItem name={item.title} icon={item.icon} link="#" key={index}  showSideBar={showSideBar}  />)
              
           ))
         }
@@ -103,9 +101,9 @@ const SideBar:React.FC<props> = ({showSideBar , setShowSideBar}) => {
           sideBarItems2.map((item: any, index: number) => (
                     
                item?.children ?
-               ( <SideBarItem name={item.title} icon={item.icon} link="#" subNavItems={item?.children}  showSideBar={showSideBar}  />)
+               ( <SideBarItem name={item.title} icon={item.icon} key={index} link="#" subNavItems={item?.children}  showSideBar={showSideBar}  />)
                :
-               ( <SideBarItem name={item.title} icon={item.icon} link="#"   showSideBar={showSideBar}  />)
+               ( <SideBarItem name={item.title} icon={item.icon} link="#" key={index}  showSideBar={showSideBar}  />)
              
           ))
         }

@@ -3,11 +3,14 @@ import { Box, Stack, Typography } from "@mui/material";
 import LinkIcon from "./assets/link.svg";
 
 const Intro:React.FC = () => {
-  const IntroContainer = {
+  const introContainer = {
+    maxWidth: "1200px",
     background:
       "linear-gradient(180deg, #21B8F9 0%, rgba(33, 184, 249, 0) 132.05%);",
+      padding:"0 1.5rem"
+  }
+  const Intro = {
     height: "150px",
-    padding:"0 1rem",
     paddingTop:"4rem",
     color:"#fff",
     
@@ -21,7 +24,9 @@ const Intro:React.FC = () => {
     // height:0,
     padding:0,
     "& img":{
-        width:"20px"
+        width:"22px",
+        marginTop:".1rem",
+        marginLeft:".5rem",
     },
     "& p":{
         padding:0,
@@ -30,13 +35,15 @@ const Intro:React.FC = () => {
   }
 
   return (
-    <Stack sx={IntroContainer} direction="row" justifyContent="space-between" alignItems="flex-start">
+    <Box sx={introContainer}>
+    <Stack sx={Intro} direction="row" justifyContent="space-between" alignItems="flex-start">
       <Typography sx={{ fontSize:"1.8rem" }} variant="h5">Welcome Mario</Typography>
       <Box sx={IntroLink}>
           <p>app.vetrinalive.it/fenoh-store</p>
         <img src={LinkIcon} alt="link icon" />
       </Box>
     </Stack>
+    </Box>
   );
 };
 

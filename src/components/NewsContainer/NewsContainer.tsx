@@ -12,11 +12,14 @@ const NewsContainer: React.FC = () => {
     boxShadow:
       " 0px 4px 4px rgba(50, 50, 71, 0.08), 0px 4px 8px rgba(50, 50, 71, 0.06);",
     borderRadius: "10px",
-    padding: "1rem",
+    padding: "2rem 1rem",
     minHeight: "150px",
     background: "#fff",
     marginBottom: "6rem",
     position: "relative",
+    "@media (max-width: 1024px)": {
+        marginBottom: "4rem",
+      }
   
   };
   const NewsContainerTitle = {
@@ -39,6 +42,9 @@ const NewsContainer: React.FC = () => {
     justifyContent: "center",
     alignItems: "center",
     padding: 0,
+    "& img":{
+      width: "20px",
+    },
     "& p": {
       padding: 0,
       margin: 0,
@@ -52,61 +58,25 @@ const NewsContainer: React.FC = () => {
     gridTemplateColumns: "1fr 1fr",
     gridGap:"2rem",
     marginTop:"3rem",
+    "@media (max-width: 768px)": {
+        gridTemplateColumns: "1fr",
+      }
   }
   
 
-  const [data, setData] = useState<newsData[]>(
-      [
-          {
-            author: "Phil Nickinson",
-            category: "general",
-            country: "us",
-            description: "FuboTV now starts at $70 a month after dropping its less-expensive \"Starter\" package.",
-            image: "https://icdn.digitaltrends.com/image/digitaltrends/youtube-tv-alternative-fubo-2-440x292-c.jpg",
-            language: "en",
-            published_at: "2022-03-29T16:49:22+00:00",
-            source: "digitaltrends",
-            title: "FuboTV drops its cheapest plan, now starts at $70 a month",
-            url: "https://www.digitaltrends.com/home-theater/fubotv-price-increase-march-2022/",
-          },
-          {
-            author: "Phil Nickinson",
-            category: "general",
-            country: "us",
-            description: "FuboTV now starts at $70 a month after dropping its less-expensive \"Starter\" package.",
-            image: "https://icdn.digitaltrends.com/image/digitaltrends/youtube-tv-alternative-fubo-2-440x292-c.jpg",
-            language: "en",
-            published_at: "2022-03-29T16:49:22+00:00",
-            source: "digitaltrends",
-            title: "FuboTV drops its cheapest plan, now starts at $70 a month",
-            url: "https://www.digitaltrends.com/home-theater/fubotv-price-increase-march-2022/",
-          },
-          {
-            author: "Phil Nickinson",
-            category: "general",
-            country: "us",
-            description: "FuboTV now starts at $70 a month after dropping its less-expensive \"Starter\" package.",
-            image: "https://icdn.digitaltrends.com/image/digitaltrends/youtube-tv-alternative-fubo-2-440x292-c.jpg",
-            language: "en",
-            published_at: "2022-03-29T16:49:22+00:00",
-            source: "digitaltrends",
-            title: "FuboTV drops its cheapest plan, now starts at $70 a month",
-            url: "https://www.digitaltrends.com/home-theater/fubotv-price-increase-march-2022/",
-          }
-      ]
-  );
+  const [data, setData] = useState<newsData[]>([]);
 
   useEffect(() => {
-    // newsService(6)
-    // .then((data) => {
-    //   console.log(data, "data");
-    //   console.log(data.data.data, "main")
+    newsService(8)
+    .then((data) => {
+      console.log(data.data.data, "data");
+      setData(data.data.data)
      
-    // })
-    // .catch((error: Error) => {
-    //   console.error({ error });
+    })
+    .catch((error: Error) => {
+      console.error({ error });
      
-    // });
+    });
   },[])
   
   return (

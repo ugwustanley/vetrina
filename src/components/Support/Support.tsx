@@ -44,13 +44,14 @@ const Support: React.FC = () => {
       marginTop:"1rem",
       marginBottom:".5rem",
       padding:".6rem 1rem",
+      textTransform:"none",
   }
 
   return (
     <Box sx={SupportContainer}>
       <Stack justifyContent="space-between" direction="row">
         <Box sx={SupportTitle}>
-          <img src={SupportIcon} alt="orders icon" /> <h5>CustomerSupport</h5>
+          <img src={SupportIcon} alt="orders icon" /> <h5>Customer Support</h5>
         </Box>
       </Stack>
 

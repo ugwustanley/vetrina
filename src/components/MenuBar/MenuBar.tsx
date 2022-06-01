@@ -34,7 +34,7 @@ const MenuBar: React.FC<props> = () => {
         Dashboard
       </Typography>
 
-      <New items={4} />
+      <New items={2} />
     </Stack>
   );
 };

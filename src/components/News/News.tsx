@@ -61,10 +61,10 @@ const News: React.FC<props> = ({ data }) => {
   };
 
   return (
-    <Box sx={News}>
+    <Box sx={News} >
       <Box sx={NewsImage}></Box>
       <Box sx={NewsContent}>
-        <h6>{data?.category}</h6>
+        <h6 data-testid="news-item">{data?.category}</h6>
         <p>{data?.title}</p>
         <a href={`${data?.url}`}>Estimated reading: 4 min</a>
       </Box>

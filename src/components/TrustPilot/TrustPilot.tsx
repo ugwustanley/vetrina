@@ -43,6 +43,7 @@ const TrustPilot: React.FC = () => {
       margin: 0,
       fontSize: ".9rem",
       marginRight: ".7rem",
+      marginTop: "-.2rem",
     },
   };
 

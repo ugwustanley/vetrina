@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="MuiBox-root css-1ql4si4"
+>
+  <div
+    className="MuiBox-root css-13ff2pu"
+  />
+  <div
+    className="MuiBox-root css-2kz2qg"
+  >
+    <h6
+      data-testid="news-item"
+    >
+      General
+    </h6>
+    <p>
+      Example
+    </p>
+    <a
+      href="example.com/url"
+    >
+      Estimated reading: 4 min
+    </a>
+  </div>
+</div>
+`;

@@ -1,5 +1,6 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Stack , Box } from '@mui/material'
+import useMedia from 'use-media'
 import SidBar from '../components/SideBar/SideBar'
 import MenuBar from '../components/MenuBar/MenuBar'
 
@@ -9,7 +10,21 @@ type props = {
 
 const Layout:React.FC<props> =  ({ children }) => {
 
+    //const isLesserThan1000 = useMedia('(max-width: 1000px)')
+    //console.log(isLesserThan1000)
+
     const [showSideBar, setShowSideBar] = useState<Boolean>(true)
+
+    // useEffect(() => {
+    //     console.log("called")
+    //     if(isLesserThan1000){
+    //         setShowSideBar(false)
+    //     }else{
+    //         setShowSideBar(true)
+    //     }
+    // },[
+    //     isLesserThan1000
+    // ])
 
     // const sideHide = {
     //     transition: "width 5.3s ease-in-out",

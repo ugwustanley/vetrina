@@ -91,6 +91,7 @@ const SideBarItem: React.FC<props> = ({
 
   return (
     <>
+    {/* <Link to="#"> */}
       <Box sx={active ? NavItemBoxActive : NavItemBox}>
         <Box sx={active ? NavItemActive : NavItem}>
           <Box sx={NavInnerItem}>
@@ -122,6 +123,7 @@ const SideBarItem: React.FC<props> = ({
              }</Box>}
         </Box>
       ) : null}
+      {/* </Link> */}
     </>
   );
 };

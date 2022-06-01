@@ -20,9 +20,9 @@ const SellProduct: React.FC = () => {
     position:"relative",
     fontFamily: 'Noto Sans HK',
     color:"#fff",
-    marginTop:"-3rem",
-    "& @media (min-width:768px)":{
-        marginTop:"-4rem"
+    // marginTop:"-3rem",
+    "@media (min-width:1024px)":{
+        marginTop:"-3rem"
     }
   };
 
@@ -72,6 +72,9 @@ const SellProduct: React.FC = () => {
     marginTop:"1rem",
     color:"#666666",
   }
+  const SellPhone = {
+    marginLeft:"1.2rem"
+  }
   const SellProductMain = {
       display:"grid",
       gridTemplateColumns:"1fr 140px",
@@ -90,7 +93,7 @@ const SellProduct: React.FC = () => {
             </Box>
         </Box>
 
-        <Box>
+        <Box sx={SellPhone}>
           <img src={Phone} alt="iphone" />
         </Box>
       </Box>

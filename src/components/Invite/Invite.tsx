@@ -29,7 +29,7 @@ const Invite: React.FC = () => {
 
   const InviteLink = {
     cursor: "pointer",
-    color: " #00C48C",
+    color: "#21B8F9",
     textDecoration: "underline",
     display: "flex",
     justifyContent: "center",
@@ -40,8 +40,9 @@ const Invite: React.FC = () => {
     "& p": {
       padding: 0,
       margin: 0,
+      marginTop:"-.15rem",
       fontSize: ".9rem",
-      marginRight: ".7rem",
+      marginRight: ".8rem",
     },
   };
 
@@ -76,7 +77,7 @@ const Invite: React.FC = () => {
 
       <Box sx={InviteLink}>
         <p>Start inviting friends!</p>
-        <ArrowRight size={17} color="#00C48C" weight="bold" />
+        <ArrowRight size={17} color="#21B8F9" weight="bold" />
       </Box>
     </Box>
   );

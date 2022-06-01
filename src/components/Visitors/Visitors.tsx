@@ -10,7 +10,10 @@ const Visitors: React.FC = () => {
     borderRadius: "10px",
     padding: "1rem",
     // width:"100%",
-    // width: "280px",
+    // maxWidth: "320px",
+    // display:"grid",
+    // justifySelf:"center",
+     //margin:"auto",
     height: "200px",
     background:"#fff",
     position:"relative",
@@ -55,6 +58,7 @@ const Visitors: React.FC = () => {
         margin:0,
         fontSize:".9rem",
         marginRight:".7rem",
+        marginTop:"-.05rem",
     }
   }
 

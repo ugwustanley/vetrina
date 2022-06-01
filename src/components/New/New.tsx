@@ -8,6 +8,9 @@ type props  = {
 const NewContainer = {
     display:"flex",
     alignItems:"center",
+    "& img":{
+      marginRight:".5rem"
+    },
     "& sup":{
         background:"red",
         color:"#fff",

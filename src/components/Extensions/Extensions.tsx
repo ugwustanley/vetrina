@@ -10,11 +10,13 @@ const Extensions: React.FC = () => {
       " 0px 4px 4px rgba(50, 50, 71, 0.08), 0px 4px 8px rgba(50, 50, 71, 0.06);",
     borderRadius: "10px",
     padding: "1rem",
-    marginTop:"-3rem",
     paddingRight: 0,
     minHeight: "280px",
     background: "#fff",
     position: "relative",
+    "@media (min-width:1024px)":{
+      marginTop:"-3rem"
+  }
   };
   const ExtensionsTitle = {
     display: "flex",
@@ -44,6 +46,7 @@ const Extensions: React.FC = () => {
       margin: 0,
       fontSize: ".9rem",
       marginRight: ".7rem",
+      marginTop:"-.1rem",
     },
   };
 

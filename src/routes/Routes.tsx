@@ -21,7 +21,7 @@ const Routes = () => {
     return (
         <>
         {routes.map((route, index) => {
-            return <Switch>
+            return <Switch key={index}>
                
                        <Route path={route?.path} element={
                            <Layout>
